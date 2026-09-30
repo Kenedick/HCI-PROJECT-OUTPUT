@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Exchange Machine</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div id="lang-screen" class="lang-screen">
+    <h2>Please choose a language / Pumili ng Wika</h2>
+
+    <button class="lang-btn" onclick="setLanguage('en')">
+        English
+    </button>
+
+    <button class="lang-btn" onclick="setLanguage('tl')">
+        Tagalog
+    </button>
+</div>
+
+<div id="machine" class="machine hidden">
+
+    <div class="header">
+        <div class="icon">💵💵</div>
+
+        <h1>COIN EXCHANGE</h1>
+
+        <p>Philippine Peso Coin Exchange Machine</p>
+    </div>
+
+    <div class="input-box">
+
+        <label for="amount" id="label-amount">
+            Enter Amount (₱)
+        </label>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+            min="1"
+        >
+
+    </div>
+
+    <div class="choices">
+
+        <h3 id="label-choose">Choose Coins:</h3>
+
+        <label class="coin-choice">
+            <input type="checkbox" value="20" class="coin">
+            ₱20 Coin
+        </label>
+
+        <label class="coin-choice">
+            <input type="checkbox" value="10" class="coin">
+            ₱10 Coin
+        </label>
+
+        <label class="coin-choice">
+            <input type="checkbox" value="5" class="coin">
+            ₱5 Coin
+        </label>
+
+        <label class="coin-choice">
+            <input type="checkbox" value="1" class="coin">
+            ₱1 Coin
+        </label>
+
+        <button
+            class="exchange"
+            id="btn-exchange"
+            onclick="exchangeCoins()">
+            EXCHANGE COINS
+        </button>
+
+        <button
+            class="clear"
+            id="btn-clear"
+            onclick="clearMachine()">
+            CLEAR
+        </button>
+
+        <button
+            class="fake-money"
+            id="btn-fake"
+            onclick="fakeMoney()">
+            FAKE MONEY
+        </button>
+
+        <div id="message" class="message"></div>
+
+    </div>
+
+    <div class="result">
+
+        <h2 id="label-breakdown">
+            Coin Breakdown
+        </h2>
+
+        <div class="coin-row">
+            <span>₱20 Coin</span>
+            <span class="count" id="coin20">0</span>
+        </div>
+
+        <div class="coin-row">
+            <span>₱10 Coin</span>
+            <span class="count" id="coin10">0</span>
+        </div>
+
+        <div class="coin-row">
+            <span>₱5 Coin</span>
+            <span class="count" id="coin5">0</span>
+        </div>
+
+        <div class="coin-row">
+            <span>₱1 Coin</span>
+            <span class="count" id="coin1">0</span>
+        </div>
+
+        <div class="total">
+            <span id="label-total">Total</span>:
+            ₱<span id="total">0</span>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
